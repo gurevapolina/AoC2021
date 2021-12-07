@@ -16,9 +16,7 @@ var numbers = inputStrings[0]
 
 var counts = Array(repeating: 0, count: numbers.max() ?? 0)
 
-for index in 0..<counts.count {
-    counts[index] = numbers.reduce(0, { $0 + abs($1 - index) })
-}
+counts = counts.indices.map({ index in numbers.reduce(0, { $0 + abs($1 - index) }) })
 
 print(counts.min() ?? 0)
 
@@ -30,8 +28,7 @@ func arithmeticProgressionSum(number: Int) -> Int {
     return Int(Double((1 + number)) / 2.0 * Double(number))
 }
 
-for index in 0..<counts.count {
-    counts[index] = numbers.reduce(0, { $0 + arithmeticProgressionSum(number: abs($1 - index)) })
-}
+counts = counts.indices.map({ index in numbers.reduce(0, { $0 + arithmeticProgressionSum(number: abs($1 - index)) }) })
 
 print(counts.min() ?? 0)
+
