@@ -132,8 +132,6 @@ for index in 0..<(inputLine.count - 1) {
     }
 }
 
-print(pairCountDict)
-
 let stepCount = 40
 
 for _ in 0..<stepCount {
@@ -183,4 +181,3 @@ for (pair, pairCount) in pairCountDict {
 
 let resultArray = resultDict.values.map({ ($0 + 1) / 2 })
 print((resultArray.max() ?? 0) - (resultArray.min() ?? 0))
-
