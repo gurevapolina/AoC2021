@@ -31,4 +31,3 @@ func arithmeticProgressionSum(number: Int) -> Int {
 counts = counts.indices.map({ index in numbers.reduce(0, { $0 + arithmeticProgressionSum(number: abs($1 - index)) }) })
 
 print(counts.min() ?? 0)
-
